@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+	-webkit-user-select: none;
+	box-sizing: border-box;
+}
+
+body {
+	cursor: default;
+	font-size: 14px;
+	font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
+			"Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
+			sans-serif;
+	line-height: 1;
+	margin: 0;
+	color: #272C31;
+	background-color: #FFF;
+}
+
+.CodeMirror {
+	font-size: 16px;
+	line-height: 1.7;
+	max-width: 655px;
+	width: calc(100% - 5.555%);
+	height: 100%;
+	margin: 0 5.555%;
+	color: #343a40;
+	background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+	.CodeMirror {
+		font-size: 18px;
+		line-height: 1.9;
+		margin: 0 auto;
+	}
+}
+
+.CodeMirror-lines {
+	margin: 48px 0;
+}
+
+/* Syntax Theme */
+.cm-s-huxley-light {
+	color: #272C31;
+}
+
+.cm-s-huxley-light .cm-em,
+.cm-s-huxley-light .cm-strong,
+.cm-s-huxley-light .cm-tag,
+.cm-s-huxley-light .cm-comment {
+	color: #737B84;
+}

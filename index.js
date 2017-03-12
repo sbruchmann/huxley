@@ -7,6 +7,7 @@ let mainWindow;
 
 const createMainWindow = () => {
 	mainWindow = new electron.BrowserWindow({
+		minWidth: 440,
 		title: app.getName()
 	});
 	mainWindow.loadURL("file://" + __dirname + "/index.html");
