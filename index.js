@@ -1,7 +1,9 @@
 "use strict";
 const electron = require("electron");
 
-const {app} = electron;
+const {app, Menu} = electron;
+
+const ApplicationMenu = require("./ApplicationMenu");
 
 let mainWindow;
 
@@ -32,4 +34,7 @@ app.on("window-all-closed", () => {
 	}
 });
 
-app.once("ready", createMainWindow);
+app.once("ready", () => {
+	Menu.setApplicationMenu(ApplicationMenu);
+	createMainWindow();
+});

@@ -1,4 +1,6 @@
 "use strict";
+const {readFile, writeFile} = require("fs");
+
 const CodeMirror = require("codemirror");
 require("codemirror/mode/markdown/markdown");
 
@@ -20,6 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.body.classList.add("platform-macos");
 		document.body.appendChild(titlebar.getElement());
 	}
+
+	window.huxley = {
+		readFile: (path) => {
+			readFile(path, "utf8", (err, content) => {
+				if (err) {
+					editor.setValue(err.message);
+				} else {
+					editor.setValue(content);
+				}
+			});
+		},
+		writeFile: (path) => {
+			writeFile(path, editor.getValue(), "utf8", (err) => {
+				if (err) {
+					editor.setValue(err.message);
+				}
+			});
+		}
+	};
 
 	window.addEventListener("beforeunload", () => {
 		storage.set(editor.getValue());
