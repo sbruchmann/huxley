@@ -3,7 +3,7 @@ Huxley
 
 > An experimental text editor.
 
-<img src="http://placehold.it/912x712" alt="Screenshot of Huxley" />
+<img src="preview.png" alt="Screenshot of Huxley" />
 
 Status
 ------
