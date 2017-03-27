@@ -1,3 +1,8 @@
+:root {
+	--titlebar-height: 35px;
+	--titlebar-offset: 70px;
+}
+
 *,
 *::before,
 *::after {
@@ -17,22 +22,51 @@ body {
 	background-color: #FFF;
 }
 
+.titlebar {
+	-webkit-app-region: drag;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--titlebar-height);
+	line-height: var(--titlebar-height);
+	padding-left: var(--titlebar-offset);
+	text-align: center;
+	background: linear-gradient(to bottom, #F6F7F9, #EEF0F2);
+}
+
+.editor {
+	max-width: 655px;
+	width: calc(100% - 5.555%);
+	margin-left: 5.555%;
+	margin-right: 5.555%;
+}
+
+.platform-macos .editorContainer {
+	overflow: auto;
+	margin-top: var(--titlebar-height);
+	height: calc(100vh - var(--titlebar-height));
+}
+
 .CodeMirror {
 	font-size: 16px;
 	line-height: 1.7;
-	max-width: 655px;
-	width: calc(100% - 5.555%);
+	width: 100%;
 	height: 100%;
-	margin: 0 5.555%;
 	color: #343a40;
 	background: transparent;
 }
 
 @media screen and (min-width: 768px) {
+	.editor {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.CodeMirror {
 		font-size: 18px;
 		line-height: 1.9;
-		margin: 0 auto;
 	}
 }
 

@@ -6,10 +6,16 @@ const {app} = electron;
 let mainWindow;
 
 const createMainWindow = () => {
-	mainWindow = new electron.BrowserWindow({
+	const options = {
 		minWidth: 440,
 		title: app.getName()
-	});
+	};
+
+	if (process.platform === "darwin") {
+		options.titleBarStyle = "hidden-inset";
+	}
+
+	mainWindow = new electron.BrowserWindow(options);
 	mainWindow.loadURL("file://" + __dirname + "/index.html");
 	mainWindow.once("closed", () => mainWindow = null);
 };

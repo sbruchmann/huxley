@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		value: storage.get()
 	});
 
+	if (process.platform === "darwin") {
+		const Titlebar = require("./Titlebar");
+		const titlebar = new Titlebar("Huxley");
+
+		document.body.classList.add("platform-macos");
+		document.body.appendChild(titlebar.getElement());
+	}
+
 	window.addEventListener("beforeunload", () => {
 		storage.set(editor.getValue());
 	});
