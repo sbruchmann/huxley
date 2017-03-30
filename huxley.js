@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		const Titlebar = require("./Titlebar");
 		const titlebar = new Titlebar("Huxley");
 
+		if (process.env.NODE_ENV === "development") {
+			titlebar.setTitle("Huxley - Experimental Build");
+		}
+
 		document.body.classList.add("platform-macos");
 		document.body.appendChild(titlebar.getElement());
 	}
