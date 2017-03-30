@@ -12,6 +12,7 @@ class Titlebar {
 
 	setTitle(value) {
 		this.getElement().textContent = value;
+		document.title = value;
 		return this;
 	}
 }
