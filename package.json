@@ -1,7 +1,7 @@
 {
   "name": "huxley",
   "productName": "Huxley",
-  "version": "0.0.0-development",
+  "version": "0.0.0-sprint-1",
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js",
