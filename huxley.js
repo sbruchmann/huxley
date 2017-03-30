@@ -3,6 +3,7 @@ const {readFile, writeFile} = require("fs");
 
 const CodeMirror = require("codemirror");
 require("codemirror/mode/markdown/markdown");
+require("codemirror/addon/selection/active-line");
 
 const storage = require("./storage");
 
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		autofocus: true,
 		lineWrapping: true,
 		mode: "markdown",
+		styleActiveLine: true,
 		theme: "huxley-light",
 		value: storage.get()
 	});
